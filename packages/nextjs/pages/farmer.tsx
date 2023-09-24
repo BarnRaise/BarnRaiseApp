@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Image from "next/image";
 import Avatar from "./Avatar";
 import type { NextPage } from "next";
 import { useAccount, useNetwork } from "wagmi";
@@ -104,17 +105,18 @@ const Farmer: NextPage = () => {
       <div className="flex items-center flex-col flex-grow pt-10">
         <div className="px-5">
           <h1 className="text-center">
-            <span className="block text-2xl mb-2">Welcome to</span>
-            <span className="block text-4xl font-bold">BarnRaise CSA</span>
+            <span className="text-8xl text-lime-500">
+              Bar
+              <span className="inline-flex relative w-24 h-24 top-1">
+                <Image alt="SE2 logo" className="cursor-pointer" fill src="/logo.svg" />
+              </span>
+              Raise
+            </span>
+            <span className="block text-2xl mt-2">Community Sales</span>
           </h1>
         </div>
 
-        <div className="flex-grow bg-base-200 w-full mt-16 px-8">
-          <div className="flex justify-center items-center gap-12 flex-col sm:flex-row">
-            <h1 className="text-center mb-8">
-              <span className="block text-2xl mb-2">Shares Sold</span>
-            </h1>
-          </div>
+        <div className="flex-grow bg-base-200 w-full mt-5 px-8">
           <div className="flex justify-center items-center gap-12 flex-col sm:flex-row py-10">
             <div className="flex flex-col px-5 py-8 text-center items-center max-w-xs rounded-2xl bg-base-300 text-base-200">
               <h1 className="text-xl px-10">Small Boxes</h1>
@@ -136,9 +138,13 @@ const Farmer: NextPage = () => {
             </div>
           </div>
           <div className="flex justify-center items-center gap-12 flex-col sm:flex-row">
-            <h1 className="text-center mb-8">
+            <h1 className="text-center">
               <span className="block text-2xl mb-2">Your Balance: {usdFormatter.format(Number(usdcBalance))}</span>
-              <button className="btn btn-secondary btn-sm" disabled={submitting} onClick={handleWithdraw}>
+              <button
+                className="btn-secondary text-base-200 text-xl px-10 py-3 rounded-2xl font-regular mt-5 hover:bg-base-200 hover:text-secondary border-0 duration-300"
+                disabled={submitting}
+                onClick={handleWithdraw}
+              >
                 {submitting && <span className="loading loading-spinner loading-xs"></span>}
                 Withdraw 💸
               </button>
