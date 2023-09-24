@@ -4,7 +4,7 @@
 
 BarnRaise is a DAO that revolutionizes the concept of community-supported agriculture (CSA), empowering small farms and bringing together local communities. Members of the DAO can purchase shares to support local farms with little additional cost or effort from the farmer.
 
-
+[Demo video](https://youtu.be/5SrnX9IHObs)
 
 
 ## Description
