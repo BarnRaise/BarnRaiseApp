@@ -55,7 +55,7 @@ const User: NextPage = () => {
 
         <div className="flex-grow bg-base-200 w-full mt-16 px-8 py-12">
           <div className="flex justify-center items-center gap-12 flex-col sm:flex-row">
-            <Link href={isManagerSmall ? "" : locks[chain!.id as keyof typeof locks]?.small!.checkout}>
+            <Link href={isManagerSmall ? "" : locks[chain!.id as keyof typeof locks]?.small!.checkout || "/"}>
               <button className="btn btn-secondary btn-lg" onClick={() => checkSelfBuy(isManagerSmall!)}>
                 {/* <BugAntIcon className="h-8 w-8 fill-secondary" /> */}
                 <p>Small</p>
@@ -63,7 +63,7 @@ const User: NextPage = () => {
                 <p>$20</p>
               </button>
             </Link>
-            <Link href={isManagerMedium ? "" : locks[chain!.id as keyof typeof locks]?.medium!.checkout}>
+            <Link href={isManagerMedium ? "" : locks[chain!.id as keyof typeof locks]?.medium!.checkout || "/"}>
               <button className="btn btn-secondary btn-lg" onClick={() => checkSelfBuy(isManagerMedium!)}>
                 {/* <SparklesIcon className="h-8 w-8 fill-secondary" /> */}
                 <p>Medium</p>
@@ -71,7 +71,7 @@ const User: NextPage = () => {
                 <p>$30</p>
               </button>
             </Link>
-            <Link href={isManagerLarge ? "" : locks[chain!.id as keyof typeof locks]?.large!.checkout}>
+            <Link href={isManagerLarge ? "" : locks[chain!.id as keyof typeof locks]?.large!.checkout || "/"}>
               <button className="btn btn-secondary btn-lg" onClick={() => checkSelfBuy(isManagerLarge!)}>
                 {/* <MagnifyingGlassIcon className="h-8 w-8 fill-secondary" /> */}
                 <p>Large</p>
