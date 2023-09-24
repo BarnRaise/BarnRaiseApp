@@ -1,3 +1,36 @@
+# BarnRaise
+
+## Summary
+
+BarnRaise is a DAO that revolutionizes the concept of community-supported agriculture (CSA), empowering small farms and bringing together local communities. Members of the DAO can purchase shares to support local farms with little additional cost or effort from the farmer.
+
+
+
+
+## Description
+
+Small farms in the US have long grappled with funding challenges, exacerbated by the modern industrialization of agriculture and the dominance of large corporations. In the 1990s, small farms accounted for nearly 50% of US food production; today, that number has dwindled to a mere 25%.
+
+Enter community-supported agriculture (CSA), a potential remedy for these farmers. CSA operates on a simple premise: consumers pay a subscription fee at the start of the planting season, and in return, receive regular boxes of fresh produce throughout the harvest season. This arrangement benefits farmers by providing upfront capital for expenses like seeds, while also mitigating the risk of poor harvests.
+
+However, CSA can be burdensome for farmers, especially during the busy pre-season. Coupled with the increasing median age of farmers, this model's scalability and sustainability face uncertainty. Furthermore, the traditional CSA model offers consumers limited insight into the risks they share in exchange for variable food quantities and quality.
+
+This is where BarnRaise steps in, leveraging the potential of Web3 to revitalize the CSA model and create mutual benefits for all involved parties.
+
+In its current iteration for this hackathon, our focus centers on membership and payment infrastructure for an on-chain CSA. Our application utilizes Unlock Protocol to enable consumers to purchase three distinct share boxes across three compatible chains: Celo, Base, and Gnosis Chain. Customers can acquire these boxes using either USDC or traditional fiat, thanks to Unlock's seamless integration with Stripe for farmer-friendly crypto onboarding.
+
+Looking forward, we're just beginning to explore the expansive possibilities offered by Unlock Protocol memberships. We plan to introduce additional perks for subscribers, including discounts at local restaurants, exclusive event access, and membership in a private Discord community. On a grander scale, BarnRaise aims to evolve into a DAO-of-DAOs, uniting numerous local sub-DAOs with a shared vision of creating fairer and more engaging food economies.
+
+Harnessing the potential of Web3, our DAO will enable contributions of time and capital to support not just one farm but an interconnected network of farms. This approach enhances resilience and fosters a stronger sense of community among a group of dedicated farmers. BarnRaise is set to revolutionize CSA, making it not just a community-supported venture but a Web3-powered movement for the future.
+
+## How It's Made
+
+Our project was meticulously crafted with attention to detail and a focus on user experience. We harnessed the design assets from Nouns DAO in Figma, ensuring a visually captivating interface that resonates with users. Even our logo proudly bears the Nounified touch! On the frontend, we relied on scaffold.eth as our foundation, integrating components from Material UI, RainbowKit, and TailwindCSS to create an elegant and seamless user interface. Under the hood, we employed Scaffold-ETH 2 for the frontend application and Unlock Protocol's Lock contracts on the backend. Notably, each subscription tier—small, medium, and large box—functions as a Lock NFT contract, skillfully deployed and configured via the Unlock dashboard. It's worth mentioning that we ventured into a bit of hacky territory with Scaffold-ETH to facilitate chain switching, albeit our "switch networks" dropdown selector encountered a hiccup along the way. For a smoother experience, we recommend adjusting chains directly in your wallet and connecting exclusively to the three chains we've deployed to.
+
+
+
+----------------------------
+
 # 🏗 Scaffold-ETH 2
 
 <h4 align="center">
