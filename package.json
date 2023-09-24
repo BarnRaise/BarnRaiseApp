@@ -31,10 +31,34 @@
   },
   "packageManager": "yarn@3.2.3",
   "devDependencies": {
+    "@types/react-modal": "^3",
+    "@types/react-transition-group": "^4",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3"
   },
   "resolutions": {
     "usehooks-ts@^2.7.2": "patch:usehooks-ts@npm:^2.7.2#./.yarn/patches/usehooks-ts-npm-2.7.2-fceffe0e43.patch"
+  },
+  "dependencies": {
+    "@coinbase/wallet-sdk": "^3.7.2",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@material-ui/core": "^4.12.4",
+    "@mui/material": "^5.14.10",
+    "@unlock-protocol/networks": "^0.0.16",
+    "@unlock-protocol/paywall": "^0.6.8",
+    "@unlock-protocol/unlock-js": "^0.39.4",
+    "ethers": "5.7.x",
+    "magic-sdk": "^20.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-modal": "^3.16.1",
+    "react-modal-hook": "^3.0.2",
+    "react-redux": "^8.1.2",
+    "react-transition-group": "^4.4.5",
+    "redux": "^4.2.1",
+    "thunk": "^0.0.1",
+    "viem": "^1.12.1",
+    "wagmi": "^1.4.2"
   }
 }
