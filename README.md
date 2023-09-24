@@ -27,7 +27,22 @@ Harnessing the potential of Web3, our DAO will enable contributions of time and 
 
 Our project was meticulously crafted with attention to detail and a focus on user experience. We harnessed the design assets from Nouns DAO in Figma, ensuring a visually captivating interface that resonates with users. Even our logo proudly bears the Nounified touch! On the frontend, we relied on scaffold.eth as our foundation, integrating components from Material UI, RainbowKit, and TailwindCSS to create an elegant and seamless user interface. Under the hood, we employed Scaffold-ETH 2 for the frontend application and Unlock Protocol's Lock contracts on the backend. Notably, each subscription tier—small, medium, and large box—functions as a Lock NFT contract, skillfully deployed and configured via the Unlock dashboard. It's worth mentioning that we ventured into a bit of hacky territory with Scaffold-ETH to facilitate chain switching, albeit our "switch networks" dropdown selector encountered a hiccup along the way. For a smoother experience, we recommend adjusting chains directly in your wallet and connecting exclusively to the three chains we've deployed to.
 
+## Contracts
 
+### Gnosis Chain
+Small box: 0x1ab8ada45bd1988c48f3361f110fb5b9e53ecdc3
+Medium box: 0x6c16091bb527b8a30ed97611440c149f019748e7
+Large box: 0x03ce835db6fb64797e635c17555880966f6441e0
+
+### Celo
+Small box: 0x1ab8ada45bd1988c48f3361f110fb5b9e53ecdc3
+Medium box: 0x92c6c51313a7d43c7eae7fa6251da7603d62111b
+Large box: 0x2e118d67423606e513be076d7b0e9d95d63e644d
+
+### Base
+Small box: 0x4a2f88603aba4c87f200e8949806f94c818821c2
+Medium box: 0x7f6c45ff6fd07024d3580de780127e5a292aee41
+Large box: 0xc68e4740f19476dacfa96f216ce46ea9c5579da3
 
 ----------------------------
 
