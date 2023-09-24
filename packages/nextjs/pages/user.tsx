@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Avatar from "./Avatar";
 import type { NextPage } from "next";
 import { useAccount, useNetwork } from "wagmi";
 import { MetaHeader } from "~~/components/MetaHeader";
@@ -40,9 +41,10 @@ const User: NextPage = () => {
       <MetaHeader title="Shop CSA Shares | BarnRaise" description="Shop CSA Shares">
         {/* We are importing the font this way to lighten the size of SE2. */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Figtree&display=swap" rel="stylesheet" />
       </MetaHeader>
-      <div className="flex items-center flex-col flex-grow pt-10">
+      <Avatar role="Community Member" href="/farmer" bgColor="#5B3130" switchRole="Farmer" avatar="/UserAvatar.png" />
+      <div className="flex flex-col flex-grow pt-10 width-full">
         <div className="px-5">
           <h1 className="text-center mb-8">
             <span className="block text-2xl mb-2">Welcome to</span>
@@ -51,7 +53,7 @@ const User: NextPage = () => {
           <p className="text-center text-lg">Get started by selecting your desired share size.</p>
         </div>
 
-        <div className="flex-grow bg-base-300 w-full mt-16 px-8 py-12">
+        <div className="flex-grow bg-base-200 w-full mt-16 px-8 py-12">
           <div className="flex justify-center items-center gap-12 flex-col sm:flex-row">
             <Link href={isManagerSmall ? "" : locks[chain!.id as keyof typeof locks]?.small!.checkout}>
               <button className="btn btn-secondary btn-lg" onClick={() => checkSelfBuy(isManagerSmall!)}>
