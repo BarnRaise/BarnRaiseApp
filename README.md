@@ -33,17 +33,23 @@ Our project was meticulously crafted with attention to detail and a focus on use
 
 ### Gnosis Chain
 Small box: 0x1ab8ada45bd1988c48f3361f110fb5b9e53ecdc3
+
 Medium box: 0x6c16091bb527b8a30ed97611440c149f019748e7
+
 Large box: 0x03ce835db6fb64797e635c17555880966f6441e0
 
 ### Celo
 Small box: 0x1ab8ada45bd1988c48f3361f110fb5b9e53ecdc3
+
 Medium box: 0x92c6c51313a7d43c7eae7fa6251da7603d62111b
+
 Large box: 0x2e118d67423606e513be076d7b0e9d95d63e644d
 
 ### Base
 Small box: 0x4a2f88603aba4c87f200e8949806f94c818821c2
+
 Medium box: 0x7f6c45ff6fd07024d3580de780127e5a292aee41
+
 Large box: 0xc68e4740f19476dacfa96f216ce46ea9c5579da3
 
 ----------------------------
