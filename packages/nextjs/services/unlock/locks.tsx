@@ -33,11 +33,29 @@ export const locks = {
       price: 40,
     },
   },
+  100: {
+    small: {
+      address: "0x1ab8ada45bd1988c48f3361f110fb5b9e53ecdc3",
+      checkout: "https://app.unlock-protocol.com/checkout?id=cc168df1-85b8-4c2f-9250-98f6dc01ef97",
+      price: 20,
+    },
+    medium: {
+      address: "0x6c16091bb527b8a30ed97611440c149f019748e7",
+      checkout: "https://app.unlock-protocol.com/checkout?id=dff7fcb0-92c8-49f8-b35f-910c50d1b4d1",
+      price: 30,
+    },
+    large: {
+      address: "0x03ce835db6fb64797e635c17555880966f6441e0",
+      checkout: "https://app.unlock-protocol.com/checkout?id=62120944-fd78-4089-b589-822311d72817",
+      price: 40,
+    },
+  },
 } as const;
 
 export const usdc = {
   42220: "0xef4229c8c3250c675f21bcefa42f58efbff6002a",
   8453: "0xd9aAEc86B65D86f6A7B5B1b0c42FFA531710b6CA",
+  100: "0xDDAfbb505ad214D7b80b1f830fcCc89B60fb7A83",
 };
 
 export const lockABI = [
