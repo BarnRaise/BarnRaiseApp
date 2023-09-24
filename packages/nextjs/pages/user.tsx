@@ -1,8 +1,40 @@
 import Link from "next/link";
 import type { NextPage } from "next";
+import { useAccount, useNetwork } from "wagmi";
 import { MetaHeader } from "~~/components/MetaHeader";
+import { useScaffoldContractRead } from "~~/hooks/scaffold-eth";
+import { locks, usdc } from "~~/services/unlock/locks";
+import { getTargetNetwork, notification } from "~~/utils/scaffold-eth";
 
 const User: NextPage = () => {
+  const chainObj = useNetwork();
+  const { address } = useAccount();
+  const chain = chainObj.chain ? chainObj.chain : getTargetNetwork();
+
+  const { data: isManagerSmall } = useScaffoldContractRead({
+    contractName: "SmallLock",
+    functionName: "isLockManager",
+    args: [address],
+  });
+
+  const { data: isManagerMedium } = useScaffoldContractRead({
+    contractName: "MediumLock",
+    functionName: "isLockManager",
+    args: [address],
+  });
+
+  const { data: isManagerLarge } = useScaffoldContractRead({
+    contractName: "LargeLock",
+    functionName: "isLockManager",
+    args: [address],
+  });
+
+  const checkSelfBuy = (isManager: boolean) => {
+    if (isManager) {
+      notification.error("Cannot buy your own shares!");
+    }
+  };
+
   return (
     <>
       <MetaHeader title="Shop CSA Shares | BarnRaise" description="Shop CSA Shares">
@@ -21,24 +53,24 @@ const User: NextPage = () => {
 
         <div className="flex-grow bg-base-300 w-full mt-16 px-8 py-12">
           <div className="flex justify-center items-center gap-12 flex-col sm:flex-row">
-            <Link href="https://app.unlock-protocol.com/checkout?id=3e99322a-1252-4a38-8e1c-dfd50d49127b">
-              <button className="btn btn-secondary btn-lg">
+            <Link href={isManagerSmall ? "" : locks[chain!.id as keyof typeof locks]?.small!.checkout}>
+              <button className="btn btn-secondary btn-lg" onClick={() => checkSelfBuy(isManagerSmall!)}>
                 {/* <BugAntIcon className="h-8 w-8 fill-secondary" /> */}
                 <p>Small</p>
                 <br />
                 <p>$20</p>
               </button>
             </Link>
-            <Link href="https://app.unlock-protocol.com/checkout?id=54e3a393-a567-4160-8d11-534d8848f22a">
-              <button className="btn btn-secondary btn-lg">
+            <Link href={isManagerMedium ? "" : locks[chain!.id as keyof typeof locks]?.medium!.checkout}>
+              <button className="btn btn-secondary btn-lg" onClick={() => checkSelfBuy(isManagerMedium!)}>
                 {/* <SparklesIcon className="h-8 w-8 fill-secondary" /> */}
                 <p>Medium</p>
                 <br />
                 <p>$30</p>
               </button>
             </Link>
-            <Link href="https://app.unlock-protocol.com/checkout?id=b33c304d-475f-411a-9e91-07fcc9e9ae22">
-              <button className="btn btn-secondary btn-lg">
+            <Link href={isManagerLarge ? "" : locks[chain!.id as keyof typeof locks]?.large!.checkout}>
+              <button className="btn btn-secondary btn-lg" onClick={() => checkSelfBuy(isManagerLarge!)}>
                 {/* <MagnifyingGlassIcon className="h-8 w-8 fill-secondary" /> */}
                 <p>Large</p>
                 <br />
