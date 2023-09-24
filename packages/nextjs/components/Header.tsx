@@ -81,12 +81,8 @@ export const Header = () => {
           )}
         </div>
         <span className="hidden lg:flex items-center gap-2 ml-4 mr-6 shrink-0">
-          <span className="text-6xl text-lime-500">
-            Bar
-            <span className="inline-flex relative w-14 h-14 top-1">
-              <Image alt="SE2 logo" className="cursor-pointer" fill src="/logo.svg" />
-            </span>
-            Raise
+          <span className="inline-flex relative w-16 h-16">
+            <Image alt="SE2 logo" className="cursor-pointer" fill src="/logo.svg" />
           </span>
         </span>
         <ul className="hidden lg:flex lg:flex-nowrap menu menu-horizontal px-1 gap-2">{navLinks}</ul>
