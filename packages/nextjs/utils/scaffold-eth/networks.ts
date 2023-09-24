@@ -3,7 +3,7 @@ import scaffoldConfig from "~~/scaffold.config";
 
 export type TChainAttributes = {
   // color | [lightThemeColor, darkThemeColor]
-  color: string | [string, string];
+  color: string;
   // Used to fetch price by providing mainnet token address
   // for networks having native currency other than ETH
   nativeCurrencyTokenAddress?: string;
@@ -17,7 +17,7 @@ export const NETWORKS_EXTRA_DATA: Record<string, TChainAttributes> = {
     color: "#ff8b9e",
   },
   [chains.sepolia.id]: {
-    color: ["#5f4bb6", "#87ff65"],
+    color: "#5f4bb6",
   },
   [chains.goerli.id]: {
     color: "#0975F6",
@@ -50,6 +50,12 @@ export const NETWORKS_EXTRA_DATA: Record<string, TChainAttributes> = {
   },
   [chains.fantomTestnet.id]: {
     color: "#1969ff",
+  },
+  [chains.base.id]: {
+    color: "#0052ff",
+  },
+  [chains.celo.id]: {
+    color: "#fcff52",
   },
 };
 
