@@ -2,8 +2,8 @@ import React, { useCallback, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Bars3Icon, BugAntIcon, SparklesIcon } from "@heroicons/react/24/outline";
-import { FaucetButton, RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
+import { Bars3Icon } from "@heroicons/react/24/outline";
+import { RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 import { useOutsideClick } from "~~/hooks/scaffold-eth";
 
 const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
@@ -34,25 +34,7 @@ export const Header = () => {
     useCallback(() => setIsDrawerOpen(false), []),
   );
 
-  const navLinks = (
-    <>
-      <li>
-        <NavLink href="/">Home</NavLink>
-      </li>
-      <li>
-        <NavLink href="/debug">
-          <BugAntIcon className="h-4 w-4" />
-          Debug Contracts
-        </NavLink>
-      </li>
-      <li>
-        <NavLink href="/user">
-          <SparklesIcon className="h-4 w-4" />
-          User
-        </NavLink>
-      </li>
-    </>
-  );
+  const navLinks = <></>;
 
   return (
     <div className="sticky lg:static top-0 navbar bg-base-100 min-h-0 flex-shrink-0 justify-between z-20 shadow-md shadow-secondary px-0 sm:px-2">
@@ -70,7 +52,7 @@ export const Header = () => {
           {isDrawerOpen && (
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 flex flex-row-reverse"
               onClick={() => {
                 setIsDrawerOpen(false);
               }}
@@ -79,20 +61,19 @@ export const Header = () => {
             </ul>
           )}
         </div>
-        <Link href="/" passHref className="hidden lg:flex items-center gap-2 ml-4 mr-6 shrink-0">
-          <span>
+        <span className="hidden lg:flex items-center gap-2 ml-4 mr-6 shrink-0">
+          <span className="text-6xl text-lime-500">
             Bar
-            <span className="flex relative w-10 h-10">
+            <span className="inline-flex relative w-14 h-14 top-1">
               <Image alt="SE2 logo" className="cursor-pointer" fill src="/logo.svg" />
             </span>
             Raise
           </span>
-        </Link>
+        </span>
         <ul className="hidden lg:flex lg:flex-nowrap menu menu-horizontal px-1 gap-2">{navLinks}</ul>
       </div>
       <div className="navbar-end flex-grow mr-4">
         <RainbowKitCustomConnectButton />
-        <FaucetButton />
       </div>
     </div>
   );
