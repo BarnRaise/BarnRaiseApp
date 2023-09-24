@@ -31,6 +31,24 @@ const User: NextPage = () => {
     args: [address],
   });
 
+  const { data: balanceSmall } = useScaffoldContractRead({
+    contractName: "SmallLock",
+    functionName: "balanceOf",
+    args: [address],
+  });
+
+  const { data: balanceMedium } = useScaffoldContractRead({
+    contractName: "MediumLock",
+    functionName: "balanceOf",
+    args: [address],
+  });
+
+  const { data: balanceLarge } = useScaffoldContractRead({
+    contractName: "LargeLock",
+    functionName: "balanceOf",
+    args: [address],
+  });
+
   const checkSelfBuy = (isManager: boolean) => {
     if (isManager) {
       notification.error("Cannot buy your own shares!");
@@ -64,7 +82,7 @@ const User: NextPage = () => {
 
         <div className="flex-grow bg-base-100 w-full px-8 py-2">
           <div className="flex justify-center items-center gap-12 flex-col sm:flex-row text-base-200 text-xl px-10 py-3 rounded-2xl font-regular mt-5">
-            <div className="flex flex-col px-5 py-8 text-center items-center max-w-xs rounded-2xl bg-base-300 text-base-200 h-64 w-80">
+            <div className="flex flex-col px-5 py-8 text-center items-center max-w-xs rounded-2xl bg-base-300 text-base-200 h-74 w-80">
               <h1 className="text-xl px-10">Small Boxes</h1>
               <p className="text-base">
                 Small boxes contain enough produce to feed a family of <b>4 adults</b> for approximately{" "}
@@ -78,10 +96,11 @@ const User: NextPage = () => {
                   <p>Buy Now</p>
                   <br />
                   <p>$20</p>
+                  {balanceSmall ? <p>Balance: {balanceSmall.toString()}</p> : <></>}
                 </button>
               </Link>
             </div>
-            <div className="flex flex-col px-5 py-8 text-center items-center max-w-xs rounded-2xl bg-base-300 text-base-200 h-64 w-80">
+            <div className="flex flex-col px-5 py-8 text-center items-center max-w-xs rounded-2xl bg-base-300 text-base-200 h-74 w-80">
               <h1 className="text-xl px-10">Medium Boxes</h1>
               <p className="text-base">
                 Medium boxes contain enough produce to feed a family of <b>4 adults</b> for approximately{" "}
@@ -96,10 +115,11 @@ const User: NextPage = () => {
                   <p>Buy Now</p>
                   <br />
                   <p>$30</p>
+                  {balanceMedium ? <p>Balance: {balanceMedium.toString()}</p> : <></>}
                 </button>
               </Link>
             </div>
-            <div className="flex flex-col px-5 py-8 text-center items-center max-w-xs rounded-2xl bg-base-300 text-base-200 h-64 w-80">
+            <div className="flex flex-col px-5 py-8 text-center items-center max-w-xs rounded-2xl bg-base-300 text-base-200 h-74 w-80">
               <h1 className="text-xl px-10">Large Boxes</h1>
               <p className="text-base">
                 Large boxes contain enough produce to feed a family of <b>7 adults</b> for approximately{" "}
@@ -113,6 +133,7 @@ const User: NextPage = () => {
                   <p>Buy Now</p>
                   <br />
                   <p>$40</p>
+                  {balanceLarge ? <p>Balance: {balanceLarge.toString()}</p> : <></>}
                 </button>
               </Link>
             </div>
