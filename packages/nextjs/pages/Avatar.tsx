@@ -53,13 +53,13 @@ export default function AvatarSection(props: {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={2} container direction="column">
+        <Grid item xs={3} container direction="column">
           <Typography variant="h6" component="div" className="text-white" fontFamily={"Figtree"}>
             Not a {role.toLowerCase()}?
           </Typography>
           <Link href={href} passHref>
             <Typography variant="subtitle1" component="div">
-              <button className="text-white bg-base-100 shadow-md py-1.5 px-3 text-sm rounded-full hover:bg-secondary hover:shadow-md focus:!bg-secondary active:!text-neutral py-1.5 px-3 text-sm rounded-full gap-2 grid grid-flow-col duration-200">
+              <button className="text-white bg-base-100 shadow-md py-1.5 px-3 my-2 text-sm rounded-full hover:bg-secondary hover:shadow-md focus:!bg-secondary active:!text-neutral py-1.5 px-3 text-sm rounded-full gap-2 grid grid-flow-col duration-200">
                 Switch to {switchRole}
               </button>
             </Typography>
