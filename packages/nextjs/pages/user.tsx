@@ -62,7 +62,7 @@ const User: NextPage = () => {
           </h1>
         </div>
 
-        <div className="flex-grow bg-base-100 w-full mt-16 px-8 py-12">
+        <div className="flex-grow bg-base-100 w-full px-8 py-2">
           <div className="flex justify-center items-center gap-12 flex-col sm:flex-row text-base-200 text-xl px-10 py-3 rounded-2xl font-regular mt-5">
             <div className="flex flex-col px-5 py-8 text-center items-center max-w-xs rounded-2xl bg-base-300 text-base-200 h-64 w-80">
               <h1 className="text-xl px-10">Small Boxes</h1>
