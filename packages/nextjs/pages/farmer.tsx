@@ -105,9 +105,9 @@ const Farmer: NextPage = () => {
       <div className="flex items-center flex-col flex-grow pt-10">
         <div className="px-5">
           <h1 className="text-center">
-            <span className="text-8xl text-lime-500">
+            <span className="text-9xl text-lime-500">
               Bar
-              <span className="inline-flex relative w-24 h-24 top-1">
+              <span className="inline-flex relative w-20 h-20 top-1">
                 <Image alt="SE2 logo" className="cursor-pointer" fill src="/logo.svg" />
               </span>
               Raise
